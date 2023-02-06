@@ -10,22 +10,25 @@ import java.util.Objects;
  *
  */
 public class Editorial {
-
+	//variables que he obtenido de la tabla de MySQL
 	private int codEditorial;
 	private String nombre;
 	private int anio;
 	
 	
-	
+	//constructor sin parámetros
 	public Editorial() {
 		this.nombre="";
+		this.anio=2023;
 	}
-	public Editorial(int codEditorial, String nombre, int año) {
+	//constructor con parámetros
+	public Editorial(int codEditorial, String nombre, int anio) {
 		super();
 		this.codEditorial = codEditorial;
 		this.nombre = nombre;
-		this.anio = año;
+		this.anio = anio;
 	}
+	//getter y setter todos.
 	public int getCodEditorial() {
 		return codEditorial;
 	}
@@ -44,6 +47,8 @@ public class Editorial {
 	public void setAño(int año) {
 		this.anio = año;
 	}
+	
+	// estos dos métodos los usamos para comparar todos los datos generados con el codEditorial.
 	@Override
 	public int hashCode() {
 		return Objects.hash(codEditorial);
@@ -58,6 +63,7 @@ public class Editorial {
 			return false;
 		Editorial other = (Editorial) obj;
 		return codEditorial == other.codEditorial;
+		
 	}
 	@Override
 	public String toString() {
